@@ -129,7 +129,7 @@ int main(void)
           printf("Tick %lu (loop count = %lu)\n", now / 1000, loop_cnt);
 
           loop_cnt = 0;
-          next_tick = now + 1000;
+          //next_tick = now + 1000;
 
       }
 
