@@ -57,18 +57,11 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-// Send printf to uart1
-int _write(int fd, char *ptr, int len) {
-    HAL_StatusTypeDef hstatus;
-
-    if (fd == 1 || fd == 2) {
-        hstatus = HAL_UART_Transmit(&huart2, (uint8_t*) ptr, len, HAL_MAX_DELAY);
-        if (hstatus == HAL_OK)
-            return len;
-        else
-            return -1;
-    }
-    return -1;
+// Send printf to uart2
+int _write(int file, char *ptr, int len)
+{
+    HAL_UART_Transmit(&huart2, (uint8_t *)ptr, len, HAL_MAX_DELAY);
+    return len;
 }
 
 /* USER CODE END 0 */
