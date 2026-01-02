@@ -111,7 +111,7 @@ int main(void)
 
       if (now >= next_blink) {
 
-          //printf("Toggling GPIO\n");
+          printf("Toggling GPIO\n");
 
           HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
           next_blink = now + 500;
